@@ -1,0 +1,224 @@
+/*Normalize*/
+@import 'normalize';
+/*Mixins*/
+@import 'mixins';
+/*External Fonts*/
+@import 'fonts';
+
+/** Defaults **/
+/*Breakpoints*/
+$largest-bp : 960px;
+$mid-bp : 520px;
+$sm-bp : 340px;
+/*Header background colour*/
+$headerColour : #c0956d;
+/*the default link colour*/
+$linkColour: #4d4d4d;
+$navColour: #4d4d4d;
+$linkHover: #d8c0a0;
+/*the background colour for most elements*/
+$bgColour: #ededed;
+
+
+
+/** Fonts **/
+$primary-font : robotoregular, sans-serif;
+$secondary-font : robotobold, Arial, sans-serif;
+$secondaryColour : #d8c0a0;
+$priFont-colour : #333333;
+
+
+body{
+	font-family:$primary-font;
+	color:$priFont-colour;
+}
+h1{
+	font: 2em $secondary-font;
+	color: $secondaryColour;
+	@media (min-width:$mid-bp){
+		margin-top: 0;
+		margin-left: 20%;
+		margin-bottom: -37px;
+		font: 109px $secondary-font;
+		color: $secondaryColour;
+	}
+		@media (max-width:$sm-bp){
+		margin-top: 0;
+		margin-left: 2%;
+		margin-bottom: 0;
+		font: 1.8em $secondary-font;
+		color: $secondaryColour;
+	}
+}
+h2{
+	margin: 0 15px;
+	font-size:30px;
+}
+h3 {
+	margin: 0;
+	padding: 2% 6%;
+}
+h4 {
+	margin: 5px 15px;
+}
+img{
+	max-width:100%;
+}
+a{
+	color:$linkColour;
+}
+a:hover{
+	color:$linkHover;
+	text-decoration:none;
+}
+/** Layout **/
+header{
+	max-width:100%;
+	background-color:$headerColour;
+	overflow:hidden;
+}
+header img{
+	max-width:30%;
+	margin: 15px;
+	float:left;
+}
+
+#container{
+	max-width:$largest-bp;
+	margin: 0 auto;
+}
+
+div > p {
+	margin: 0;
+	padding: 2%;
+}
+
+.content{
+	max-width:100%;
+	padding-top:2%;
+	background-color: $bgColour;
+	overflow:hidden;
+}
+.col-1{
+	width:100%;
+	margin:2% 2%;
+	@media (min-width:$mid-bp){
+		width:55%;
+		float:left;
+		margin:0 2%;
+	}
+}
+
+.col-2{
+	width:100%;
+	@media (min-width:$mid-bp){
+		width:40%;
+		float:left;
+	}
+}
+#col-3{
+	width:100%;
+	@media (min-width:$mid-bp){
+		width:50%;
+		float:left;
+	}
+}
+.col-4{
+	width:100%;
+	@media (min-width:$mid-bp){
+		width:50%;
+		float:left;
+	}
+}
+.project{
+	padding:5px;
+}
+.eventInfo{
+	padding: 0 4% 2%;
+	p, h2, h3{
+		margin:5px 0;
+		padding:0;
+	}
+}
+
+/**** Google Maps API https://developers.google.com/maps/documentation/javascript/examples/map-simple ****/
+html, body, #map-canvas {
+	width:100%;
+    height: 350px;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+footer{
+	background-color:$headerColour;
+}
+
+footer > p{
+	margin:0;
+	padding:2%;
+}
+
+/** Nav **/
+.navvy{
+	max-width:100%;
+	z-index: 1000;
+	position: relative;
+	background-color:$secondaryColour;
+	@include clearfix;
+		clear:both;
+	ul{ 
+	
+		padding:0; 
+		margin:0; 
+		
+	}
+	
+	li{ 
+		margin-top:1em; 
+		list-style:none; 
+	}
+	li:first-child{ 
+		padding-left: 0;
+	 
+		margin-top:0;
+	}
+	a{ 
+		display:block; 
+		color:$navColour; 
+		text-decoration:none; 
+		font:$secondary-font; 
+		padding:1em; 
+		text-align:center; 
+		background-color:$secondaryColour;
+	}
+	a:hover{
+		background-color:$headerColour;
+		color:$linkHover;
+	}
+	
+	@media (min-width:$mid-bp){
+	
+		@include clearfix;
+	
+		ul { 
+			
+			@include clearfix; 
+			padding-right:20%; 
+			float:right;
+		}
+		li { 
+			float:left; 
+			margin-left:1em; 
+			margin-top:0; 
+		}
+		li:first-child{ 	
+			padding-left: 0; 
+		}
+		a{ 
+			padding:0.5em 1em; 
+			text-align:center; 
+		}	
+	}
+}
+
