@@ -37,7 +37,7 @@ h1{
 	color: $secondaryColour;
 	@media (min-width:$mid-bp){
 		margin-top: 0;
-		margin-left: 20%;
+		margin-left: 13%;
 		margin-bottom: -37px;
 		font: 109px $secondary-font;
 		color: $secondaryColour;
@@ -78,9 +78,13 @@ header{
 	overflow:hidden;
 }
 header img{
-	max-width:30%;
-	margin: 15px;
-	float:left;
+	max-width:10%;
+		margin: 15px;
+		float:left;
+	@media (min-width:$mid-bp){
+		margin: 15px;
+		float:left;
+	}
 }
 
 #container{
@@ -95,9 +99,17 @@ div > p {
 
 .content{
 	max-width:100%;
-	padding-top:2%;
 	background-color: $bgColour;
 	overflow:hidden;
+	clear:both;
+}
+
+.main{
+	padding:0;
+	@media (min-width:$mid-bp){
+	max-width:100%;
+	padding: 0 24%;
+	}
 }
 .col-1{
 	width:100%;
@@ -105,17 +117,38 @@ div > p {
 	@media (min-width:$mid-bp){
 		width:55%;
 		float:left;
-		margin:0 2%;
+		margin:2% 2%;
 	}
 }
 
 .col-2{
 	width:100%;
 	@media (min-width:$mid-bp){
-		width:40%;
+		width:37%;
 		float:left;
+		padding:2%;
 	}
 }
+.col-3{
+	width:100%;
+	@media (min-width:$mid-bp){
+		width:30%;
+		float:left;
+		margin:1%;
+	}
+}
+.containing{
+	height:auto;
+	margin-left: 11%;
+	overflow:hidden;
+	h3, p{
+		padding:0;
+	}
+	a:hover{
+		color:$headerColour;
+	}
+}
+
 #col-3{
 	width:100%;
 	@media (min-width:$mid-bp){
@@ -123,24 +156,55 @@ div > p {
 		float:left;
 	}
 }
+
+.conCol{
+	@include clearfix;
+}
+
 .col-4{
 	width:100%;
+	h2{
+		margin:0;
+	}
+	a{
+		text-decoration:none;
+	}
 	@media (min-width:$mid-bp){
-		width:50%;
+		width:100%;
+		clear:both;
+	}
+}
+.cat{
+	width:100%;
+	@media (min-width:$mid-bp){
+		width:20%;
+		margin:2%;
 		float:left;
 	}
 }
 .project{
 	padding:5px;
 }
-.eventInfo{
-	padding: 0 4% 2%;
+.adoptInfo{
+	padding:2% 4%;
+	background-color:#868183;
 	p, h2, h3{
 		margin:5px 0;
 		padding:0;
+		color:#fff;
+	}
+	a{
+		color:$linkHover;
 	}
 }
-
+.pho{
+	color:#999;
+	text-decoration:underline;
+	@media (min-width:$mid-bp){
+		color:#fff !important;
+		text-decoration:none;
+	}
+}
 /**** Google Maps API https://developers.google.com/maps/documentation/javascript/examples/map-simple ****/
 html, body, #map-canvas {
 	width:100%;
@@ -151,12 +215,20 @@ html, body, #map-canvas {
 
 
 footer{
+	img{
+	max-width:8%;
+	margin: 2%;
+	float:right;
+	}
+	clear:both;
 	background-color:$headerColour;
+	overflow:hidden;
 }
 
 footer > p{
 	margin:0;
 	padding:2%;
+	float:left;
 }
 
 /** Nav **/
@@ -204,7 +276,7 @@ footer > p{
 		ul { 
 			
 			@include clearfix; 
-			padding-right:20%; 
+			padding-right:25%; 
 			float:right;
 		}
 		li { 
@@ -222,3 +294,48 @@ footer > p{
 	}
 }
 
+/**Form Styles**/
+#infoForm{
+	width:90%;
+	margin-top:18px;
+	padding:2%;
+	border-top:1px solid $bgColour;
+	p{
+		margin-top:3%
+	}
+	
+	input{
+		width:90%;
+		margin-bottom:2%;
+		padding:2%;
+		border:1px solid #000;
+		border-radius:25px;
+			@media (min-width:$mid-bp){
+				width:70%;
+				margin-bottom:2%;
+				border:1px solid #000;
+				border-radius:25px;
+		}
+	}
+	label{
+		color:#fff;
+	}
+}
+
+#message {
+	width:99%;
+	padding: 1%;
+	border:1px solid #000;
+}
+#submit{
+	width:90px;
+	margin-top:5px;
+	padding:2%;
+	background-color:$linkHover;
+	border:1px solid #000;
+	border-radius:25px;
+}
+fieldset{
+	margin:0;
+	border:none;
+}

@@ -9,7 +9,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script>
 var map;
-var lati = new google.maps.LatLng(45.429239, -75.690029);
+var lati = new google.maps.LatLng(45.441570, -75.685556);
 
 var MY_MAPTYPE_ID = 'custom_style';
 
@@ -18,36 +18,13 @@ function initialize() {
   var featureOpts = [
     {
       stylers: [
-        { hue: '#485d80' },
+        { hue: '#ffffff' },
         { visibility: 'on' },
         { gamma: 0.6 },
         { weight: 0.4 }
       ]
     },
-  
-    
-	{
-      featureType: 'landscape.all',
-      stylers: [
-        { color: '#d6d6d6' }
-      ]
-    },
 
-	{
-      featureType: 'poi',
-      stylers: [
-	    { visibility: 'on' },
-        { color: '#485d80' }
-      ]
-    },
-	{
-      featureType: 'road',
-      stylers: [
-	  	{ gamma: 0.5 },
-	    { visibility: 'on' },
-        { color: '#dc4e23' }
-      ]
-    },
 	  {
       elementType: 'labels.icon',
       stylers: [
@@ -87,9 +64,9 @@ function initialize() {
  var contentString = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
-      '<h3 id="firstHeading" class="firstHeading">126 York St</h3>'+
+      '<h3 id="firstHeading" class="firstHeading">Cats of Ottawa</h3>'+
       '<div id="bodyContent">'+
-      '<p>Hosted by Shopify, Random Hacks of Kindness Ottawa is located in their Lounge.</p>'+
+      '<p>Come visit us to see the cats in person, and to donate for their upkeep.</p>'+
       '</div>'+
       '</div>';
 
@@ -100,7 +77,7 @@ function initialize() {
   var marker = new google.maps.Marker({
       position: lati,
       map: map,
-      title: 'Shopify Ottawa'
+      title: 'Cats of Ottawa'
   });
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.open(map,marker);
@@ -133,22 +110,37 @@ google.maps.event.addDomListener(window, 'load', initialize);
 				<div id="map-canvas"></div>
             </div>
         	<div class="col-1">
-            	<div class="eventInfo">
-                    <h2>Calling all designers, front-end and back-end developers!</h2>
-                    <p>Come join us in working on interesting projects solving real-world problems. The cost is 5$. We provide the space to hack, 5 meals throughout the weekend and awesome swag.</p>
-                    <h3>Date</h3>
-                    <p>Friday December 6th &ndash; Sunday December 8th</p>
+            	<div class="adoptInfo">
+                    <h2>Adopt From Cats of Ottawa</h2>
+                    <p>Please fill out the form below to get more information about adopting a cat from us.</p>                  
                     <h3>Location</h3>
-                    <p>The Shopify Lounge, 126 York Street.</p>
-                    <p>Please enter through the glass doors at the back of the building.</p>
-                </div>
+                    <p>123 MacKay St. Ottawa ON k2c avb</p>
+                    <h3>Contact us for more information about Adoption</h3>
+                    <p>Call us: <a href="tel:6135555555" class="pho">123.456.7890</a></p>
+                    <p>Sent us an email: <a href="mailto:shoffmand@gmail.com">adopt@catsofottawa.com</a></p>
+                
+                <form id="infoForm" method="post">
+    		<fieldset>
+            	<h3>Contact Us!</h3>
+                 <label for="name">Name</label><br>
+                 <input type="text" name="name" id="name"><br>
+                 <label for="email">Email</label><br>
+                 <input type="email" name="email" id="email"><br>
+                 <label for="email">Phone Number</label><br>
+                 <input type="tel" name="tel" id="tel"><br>
+                 
+                 <h3>Adoption Question</h3>
+                 <textarea id="message" name="message" placeholder="Enter your message."></textarea><br>
+                 <input type="submit" name="submit" id="submit" value="Submit">
+    		</fieldset>
+    </form>
             </div>
-           
+           </div>
         </div>
 		<footer>
         <p>&copy; Cats of Ottawa 2014</p>
+        <a href="#"><img src="images/donate.png" alt="logo"></a>
 		</footer>
     </div>
-    <script src="js/jquery-1.10.2.min.js"></script>
 </body>
 </html>
